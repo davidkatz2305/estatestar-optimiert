@@ -1,0 +1,70 @@
+/* Step 2: focused additions to the unchanged original Elementor presentation. */
+html.es-snap { scroll-snap-type: y mandatory; scroll-padding-top: 0; }
+body.es-home:not(.ast-main-header-nav-open):not(.ast-popup-nav-open) { overflow-x: clip; overflow-y: visible; }
+.es-home :is(#hero,#mission,#photo,#film,[id="360"],#digitallab,#ki,#team,#mteam,#contact,#mcontact) { scroll-snap-align: start; scroll-snap-stop: always; }
+.es-home :is(a,button,[role="button"]):focus-visible { outline: 2px solid #e78258; outline-offset: 5px; }
+.es-home .control[role="button"] { cursor: pointer; }
+.es-home .control[aria-pressed="true"] { text-underline-offset: 9px; }
+.es-home #wp-responsive-breakpoints { display: none; }
+.es-sr-only { position: absolute!important; width: 1px!important; height: 1px!important; padding: 0!important; overflow: hidden!important; clip: rect(0,0,0,0)!important; white-space: nowrap!important; border: 0!important; }
+.es-pager { position: fixed; right: 24px; bottom: max(24px,env(safe-area-inset-bottom)); z-index: 90; display: flex; align-items: center; background: rgba(255,255,255,.94); border: 1px solid #ddd; border-radius: 30px; box-shadow: 0 2px 16px #0000000d; color: #333; backdrop-filter: blur(12px); }
+.es-pager button { width: 40px; height: 42px; padding: 0; border: 0; background: none; color: inherit; font: 22px/1 Arial,sans-serif; }
+.es-pager button:hover { color: #de754d; background: none; }
+.es-pager button:disabled { opacity: .25; }
+.es-pager output { font: 11px/1 Arial,sans-serif; letter-spacing: .08em; min-width: 42px; text-align: center; }
+.es-snap-toggle { font: 11px/1.5 Arial,sans-serif!important; letter-spacing: .06em; color: inherit!important; background: transparent!important; border: 0!important; padding: 8px 12px!important; text-decoration: underline; text-underline-offset: 3px; }
+.es-version-link { font: 11px/1.5 Arial,sans-serif; margin-left: 20px; color: inherit; white-space: nowrap; }
+.es-video-toggle { position: absolute; left: 26px; bottom: max(26px,env(safe-area-inset-bottom)); z-index: 3; background: #0008!important; color: #fff!important; border: 1px solid #ffffff70!important; border-radius: 30px; padding: 10px 16px!important; font: 12px/1.2 Arial,sans-serif!important; backdrop-filter: blur(10px); }
+.es-video-toggle:hover { background: #000b!important; }
+.es-home .eael-elements-flip-box-container:focus-within .eael-elements-flip-box-flip-card { transform: rotateY(-180deg); }
+.es-email-result { font: 15px/1.5 Arial,sans-serif; padding: 12px 0; }
+.es-email-result a { color: #ed9b75; text-decoration: underline; text-underline-offset: 4px; }
+.es-ki { min-height: 100svh; position: relative; background: #fff; color: #161616; display: flex; flex-direction: column; justify-content: center; padding: 110px max(7vw,24px) 70px; }
+.es-ki-logo { position: absolute; left: 30px; top: 30px; width: 330px; }
+.es-ki-intro { text-align: center; max-width: 760px; margin: 0 auto 34px; }
+.es-ki-eyebrow { font: 11px/1.5 Arial,sans-serif; letter-spacing: .18em; color: #8a4c32; margin: 0 0 10px; }
+.es-ki h2 { font: 400 clamp(28px,3.5vw,50px)/1.25 Michroma,Arial,sans-serif; letter-spacing: 0; margin: 0 0 18px; }
+.es-ki-intro>p:last-child { font: 17px/1.6 Arial,sans-serif; color: #555; margin: 0; }
+.es-ki-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 30px; max-width: 1100px; width: 100%; margin: 0 auto; }
+.es-ki-card { border: 0; background: none; min-width: 0; }
+.es-ki-card figure { margin: 0 0 20px; }
+.es-ki-card img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; }
+.es-ki-card figcaption { font: 10px/1.4 Arial,sans-serif; color: #777; margin-top: 6px; }
+.es-ki-card h3 { font: 400 15px/1.6 Michroma,Arial,sans-serif; margin: 0 0 10px; }
+.es-ki-card p { font: 16px/1.6 Arial,sans-serif; color: #555; margin: 0; }
+.es-ki-footer { max-width: 1100px; width: 100%; margin: 34px auto 0; border-top: 1px solid #e7e7e7; padding-top: 20px; display: flex; gap: 20px; align-items: center; justify-content: space-between; }
+.es-ki-footer p { font: 12px/1.5 Arial,sans-serif; color: #777; margin: 0; max-width: 680px; }
+.es-ki-cta { color: #222; font: 12px/1.5 Michroma,Arial,sans-serif; white-space: nowrap; padding: 10px 0; border-bottom: 1px solid #e78258; }
+@media (max-width: 1024px) {
+ .es-ki { padding: 110px 30px 70px; }
+ .es-ki-logo { width: 250px; }
+ .es-ki-grid { gap: 20px; }
+ .es-ki-card h3 { font-size: 12px; }
+ .es-ki-card p { font-size: 15px; }
+}
+@media (max-width: 600px) {
+ .es-home :is(#hero,#mission,#photo,#film,[id="360"]) { min-height: 100svh; }
+ .es-home #hero { height: 100svh; }
+ .es-home .eael-filter-gallery-control { margin-bottom: 22px!important; }
+ .es-home .eael-filter-gallery-control ul { display: flex!important; flex-wrap: wrap; justify-content: center; gap: 4px 12px; padding: 0 16px!important; }
+ .es-home .eael-filter-gallery-control li { min-height: 44px; display: flex!important; align-items: center; justify-content: center; padding: 6px 9px!important; margin: 0!important; font-size: 12px!important; }
+ .es-home #photo .eael-filter-gallery-control li { flex: 0 0 calc(50% - 6px); }
+ .es-pager { right: 12px; bottom: max(12px,env(safe-area-inset-bottom)); }
+ .es-pager button { width: 38px; }
+ .es-pager output { font-size: 10px; min-width: 37px; }
+ .es-video-toggle { left: 14px; bottom: max(16px,env(safe-area-inset-bottom)); padding: 10px 12px!important; font-size: 11px!important; }
+ .es-ki { padding: 100px 24px 80px; }
+ .es-ki-logo { width: 168px; top: 16px; left: 16px; }
+ .es-ki-intro { margin-bottom: 28px; }
+ .es-ki h2 { font-size: 29px; }
+ .es-ki-intro>p:last-child { font-size: 16px; }
+ .es-ki-grid { grid-template-columns: 1fr; gap: 28px; }
+ .es-ki-card figure { margin-bottom: 12px; }
+ .es-ki-card h3 { font-size: 15px; margin-bottom: 8px; }
+ .es-ki-card p { font-size: 16px; }
+ .es-ki-footer { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+ html.es-snap { scroll-snap-type: none; }
+ .es-home *, .es-home *::before, .es-home *::after { animation-duration: .01ms!important; transition-duration: .01ms!important; scroll-behavior: auto!important; }
+}
