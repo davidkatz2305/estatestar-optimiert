@@ -119,7 +119,7 @@
   pager.innerHTML=`<button type="button" data-direction="-1" aria-label="${text('Vorheriger Abschnitt','Previous section')}">↑</button><output aria-label="${text('Aktueller Abschnitt','Current section')}">01 / 09</output><button type="button" data-direction="1" aria-label="${text('Nächster Abschnitt','Next section')}">↓</button>`;
   document.body.append(pager);
   const current=()=>{const list=sections();let index=0;list.forEach((section,i)=>{if(section.getBoundingClientRect().top<=innerHeight*.35)index=i;});return {list,index};};
-  const updatePager=()=>{const {list,index}=current();pager.querySelector('output').textContent=`${String(index+1).padStart(2,'0')} / ${String(list.length).padStart(2,'0')}`;pager.querySelector('[data-direction="-1"]').disabled=index===0;pager.querySelector('[data-direction="1"]').disabled=index===list.length-1;};
+  const updatePager=()=>{const {list,index}=current();pager.hidden=['contact','mcontact'].includes(list[index]?.id);pager.querySelector('output').textContent=`${String(index+1).padStart(2,'0')} / ${String(list.length).padStart(2,'0')}`;pager.querySelector('[data-direction="-1"]').disabled=index===0;pager.querySelector('[data-direction="1"]').disabled=index===list.length-1;};
   pager.addEventListener('click',event=>{const button=event.target.closest('[data-direction]');if(!button)return;const {list,index}=current();list[index+Number(button.dataset.direction)]?.scrollIntoView({behavior:motion.matches?'auto':'smooth'});});
   let frame;addEventListener('scroll',()=>{if(!frame)frame=requestAnimationFrame(()=>{updatePager();frame=0;});},{passive:true});
   addEventListener('resize',updatePager,{passive:true});

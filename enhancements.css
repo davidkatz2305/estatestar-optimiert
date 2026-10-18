@@ -8,6 +8,8 @@ body.es-home:not(.ast-main-header-nav-open):not(.ast-popup-nav-open) { overflow-
 .es-home #wp-responsive-breakpoints { display: none; }
 .es-sr-only { position: absolute!important; width: 1px!important; height: 1px!important; padding: 0!important; overflow: hidden!important; clip: rect(0,0,0,0)!important; white-space: nowrap!important; border: 0!important; }
 .es-pager { position: fixed; right: 24px; bottom: max(24px,env(safe-area-inset-bottom)); z-index: 90; display: flex; align-items: center; background: rgba(255,255,255,.94); border: 1px solid #ddd; border-radius: 30px; box-shadow: 0 2px 16px #0000000d; color: #333; backdrop-filter: blur(12px); }
+.es-pager[hidden] { display: none; }
+.es-home :is(#contact,#mcontact) { height: auto; min-height: 100svh; padding-bottom: 16px; }
 .es-pager button { width: 40px; height: 42px; padding: 0; border: 0; background: none; color: inherit; font: 22px/1 Arial,sans-serif; }
 .es-pager button:hover { color: #de754d; background: none; }
 .es-pager button:disabled { opacity: .25; }
